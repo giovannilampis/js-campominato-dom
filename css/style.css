@@ -1,0 +1,93 @@
+/* COLOR VARIABLES */
+
+:root {
+    --background: rgb(131, 254, 208);
+    --head-foot: rgb(255, 255, 255);
+    --black : rgb(12, 12, 12);
+}
+
+/* GENERAL*/
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.debug {
+    border: 2px dashed red;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: gold;
+}
+
+header,
+footer {
+    height: 5rem;
+    background-color: var(--head-foot);
+    line-height: 5rem;
+}
+
+#logo-container {
+    width: 4rem;
+    aspect-ratio: 1 / 1;
+}
+
+/* minefield, where the cells will be appended to */
+
+#minefield {
+    width: 50rem;
+    aspect-ratio: 1 / 1;
+    background-color: var(--head-foot);
+    margin: 1rem auto;
+}
+
+/* cell basic layout */
+
+.cell {
+    border: 1px solid var(--background);
+    width: calc(100% / 10);
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* cell color when clicked */
+
+.azure {
+    background-color: var(--background);
+}
+
+/* cell size for beginner level */
+
+.beginner-cell {
+    width: calc(100% / 10);
+}
+
+/* cell size for advanced level */
+
+.advanced-cell {
+    width: calc(100% / 9);
+}
+
+/* cell size for pro level */
+
+.pro-cell {
+    width: calc(100% / 7);
+}
+
+/* anchor elements color */
+
+a {
+    color: brown;
+}
