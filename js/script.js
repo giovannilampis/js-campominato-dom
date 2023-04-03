@@ -89,7 +89,8 @@ function createHtmlElement(htmlTag, classes, text){
 
         } else {
 
-            this.innerHTML = `explosion`;
+            this.innerHTML = `<i class="fa-solid fa-bomb fa-spin fa-spin-reverse" style="color: #e53010;"></i>
+            `;
 
         }
 
