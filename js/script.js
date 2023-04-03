@@ -12,10 +12,6 @@ let bombs = [];
 
 play.addEventListener("click", function() {
 
-    // we need a boolean variable, in order to stop the game at some point
-
-    let gameOver = false;
-
     // get the .score element in html
 
     let scoreHtml = document.querySelector(".score");
@@ -43,6 +39,10 @@ play.addEventListener("click", function() {
     // a variable expresses the current score during thre game
 
     let score = 0;
+
+    // a variable expresses the max number of attempts there can be during a game
+
+    const attemptsAllowed = level - bombsNumber;
 
     
 
@@ -133,7 +133,6 @@ function myFunction_set() {
 }
 
 // function aimed at making bombs
-
 function makeBombs(bombsNumber){
 
     const bombContainer = [];
@@ -160,6 +159,17 @@ function makeBombs(bombsNumber){
 
 function randomNumber (min,max) {
   return Math.floor (Math.random ()* (max-min+1)+min);
+}
+
+// function aimed at ending the game
+
+function gameOver() {
+    if ( score == attemptsAllowed ) {
+        document.getElementById("gameresponse").innerHTML = `Hai vinto col punteggio massimo di ${score} punti 🤩😍🤓`;
+
+    } else {
+        document.getElementById("gameresponse").innerHTML = `Hai perso 💣😩💣 La tua partita è terminata con il punteggio: ${score}`;
+    }
 }
 
 // dark mode controller variable
