@@ -4,12 +4,15 @@
 
 const play = document.getElementById("play");
 
+// Bomb locations are contained in an Array
 
 let bombs = [];
 
+// what happens when we click play ?
 
 play.addEventListener("click", function() {
 
+    let gameOver = false;
 
     // get the #minefield element in html
 
@@ -89,8 +92,7 @@ function createHtmlElement(htmlTag, classes, text){
 
         } else {
 
-            this.innerHTML = `<i class="fa-solid fa-bomb fa-spin fa-spin-reverse" style="color: #e53010;"></i>
-            `;
+            this.innerHTML = `<i class="fa-solid fa-bomb fa-spin fa-spin-reverse" style="color: #e53010;"></i>`;
 
         }
 
