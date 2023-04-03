@@ -4,7 +4,12 @@
 
 const play = document.getElementById("play");
 
+
+let bombs = [];
+
+
 play.addEventListener("click", function() {
+
 
     // get the #minefield element in html
 
@@ -18,13 +23,19 @@ play.addEventListener("click", function() {
 
     const level = parseInt(document.getElementById("level").value);
 
-    let bombs = makeBombs(level);
+     // an array containns the  bombs made
+
+     bombs = makeBombs(level);
+
+     console.log(bombs);
 
     // for cycle
 
     for(let i = 1; i <= level; i++) {
 
         minefield.append( createHtmlElement( "div", "cell", i ) );
+
+          //  each item will be clickable
 
     }
 
@@ -43,7 +54,6 @@ function createHtmlElement(htmlTag, classes, text){
 
     const level = parseInt(document.getElementById("level").value);
 
-
     // there will be differences depending on the difficulty level chosen
 
     switch(level) {
@@ -51,7 +61,6 @@ function createHtmlElement(htmlTag, classes, text){
         // level beginner
 
         case '100':
-        default:
            element.classList.add("beginner-cell");
            break;
 
@@ -67,19 +76,24 @@ function createHtmlElement(htmlTag, classes, text){
              element.classList.add("pro-cell");
      }
 
-    //  each item will be clickable
-
      element.addEventListener("click", function() {
 
-        // when clicked, the element will turn azure
 
-        this.classList.add("azure");
+        if ( !bombs.includes(text) ) {
 
-        // when clicked, the element will show a text
+            this.classList.add("azure");
 
-        this.innerHTML = text;
+            // when clicked, the element will show a text
 
-     })
+            this.innerHTML = text;
+
+        } else {
+
+            this.innerHTML = `explosion`;
+
+        }
+
+    })
 
     return element;
 
@@ -117,6 +131,7 @@ function makeBombs(bombsNumber){
             bombContainer.push( bomb );
         }
     }
+    console.log(bombContainer);
 
     return bombContainer;
 
