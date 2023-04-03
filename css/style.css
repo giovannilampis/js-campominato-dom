@@ -43,7 +43,7 @@ footer {
 /* minefield, where the cells will be appended to */
 
 #minefield {
-    width: 50rem;
+    width: 45rem;
     aspect-ratio: 1 / 1;
     background-color: var(--head-foot);
     margin: 1rem auto;

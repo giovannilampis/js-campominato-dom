@@ -12,7 +12,13 @@ let bombs = [];
 
 play.addEventListener("click", function() {
 
+    // we need a boolean variable, in order to stop the game at some point
+
     let gameOver = false;
+
+    // get the .score element in html
+
+    let scoreHtml = document.querySelector(".score");
 
     // get the #minefield element in html
 
@@ -26,11 +32,19 @@ play.addEventListener("click", function() {
 
     const level = parseInt(document.getElementById("level").value);
 
-     // an array containns the  bombs made
+    // an array containns the  bombs made
 
-     bombs = makeBombs(level);
+    bombs = makeBombs(level);
 
-     console.log(bombs);
+    // a variable express the total number of bombs
+
+    const bombsNumber = 16;
+
+    // a variable expresses the current score during thre game
+
+    let score = 0;
+
+    
 
     // for cycle
 
@@ -89,6 +103,7 @@ function createHtmlElement(htmlTag, classes, text){
             // when clicked, the element will show a text
 
             this.innerHTML = text;
+
 
         } else {
 
