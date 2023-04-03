@@ -63,19 +63,19 @@ function createHtmlElement(htmlTag, classes, text){
 
         // level beginner
 
-        case '100':
+        case 100:
            element.classList.add("beginner-cell");
            break;
 
         // level advanced
 
-        case '81':
+        case 81:
              element.classList.add("advanced-cell");
              break;
 
         // level pro
 
-         case '49':
+         case 49:
              element.classList.add("pro-cell");
      }
 
