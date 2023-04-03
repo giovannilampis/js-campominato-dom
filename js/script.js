@@ -18,6 +18,8 @@ play.addEventListener("click", function() {
 
     const level = parseInt(document.getElementById("level").value);
 
+    let bombs = makeBombs(level);
+
     // for cycle
 
     for(let i = 1; i <= level; i++) {
@@ -39,7 +41,7 @@ function createHtmlElement(htmlTag, classes, text){
 
     // get the select element from html
 
-    const level = document.getElementById("level").value;
+    const level = parseInt(document.getElementById("level").value);
 
 
     // there will be differences depending on the difficulty level chosen
@@ -103,6 +105,20 @@ function myFunction_set() {
 function makeBombs(bombsNumber){
 
     const bombContainer = [];
+
+    // make 16 bombs
+
+    while ( bombContainer.length < 16 ) {
+
+        let bomb = randomNumber(1, bombsNumber);
+
+        if ( !bombContainer.includes( bomb )) {
+
+            bombContainer.push( bomb );
+        }
+    }
+
+    return bombContainer;
 
 }
 
