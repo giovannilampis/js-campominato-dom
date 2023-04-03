@@ -98,6 +98,21 @@ function myFunction_set() {
     r.style.setProperty("--black", "rgb(240,230,140)");
 }
 
+// function aimed at making bombs
+
+function makeBombs(bombsNumber){
+
+    const bombContainer = [];
+
+}
+
+// function aimed at creating random numbers 
+// between a minimum and a maximum number
+
+function randomNumber (min,max) {
+  return Math.floor (Math.random ()* (max-min+1)+min);
+}
+
 // dark mode controller variable
 
 let darkMode = false;
