@@ -1,5 +1,7 @@
 "use strict"
 
+let score = 0;
+
 // get the #play element in html
 
 const play = document.getElementById("play");
@@ -11,10 +13,6 @@ let bombs = [];
 // what happens when we click play ?
 
 play.addEventListener("click", function() {
-
-    // get the .score element in html
-
-    let scoreHtml = document.querySelector(".score");
 
     // get the #minefield element in html
 
@@ -89,9 +87,19 @@ function createHtmlElement(htmlTag, classes, text){
 
             this.innerHTML = text;
 
+            score++;
+
         } else {
 
             this.innerHTML = `<i class="fa-solid fa-bomb fa-spin fa-spin-reverse" style="color: #e53010;"></i>`;
+
+            // get the .score element in html
+
+            let scoreHtml = document.querySelector(".score");
+
+            scoreHtml.innerHTML = `Il tuo punteggio è ${score}`;
+
+            
 
         }
 
