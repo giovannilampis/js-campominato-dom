@@ -32,20 +32,6 @@ play.addEventListener("click", function() {
 
     bombs = makeBombs(level);
 
-    // a variable express the total number of bombs
-
-    const bombsNumber = 16;
-
-    // a variable expresses the current score during thre game
-
-    let score = 0;
-
-    // a variable expresses the max number of attempts there can be during a game
-
-    const attemptsAllowed = level - bombsNumber;
-
-    
-
     // for cycle
 
     for(let i = 1; i <= level; i++) {
@@ -57,7 +43,6 @@ play.addEventListener("click", function() {
     }
 
 })
-
 
 // a function can create a generic html element with some certain classes
 
@@ -104,7 +89,6 @@ function createHtmlElement(htmlTag, classes, text){
 
             this.innerHTML = text;
 
-
         } else {
 
             this.innerHTML = `<i class="fa-solid fa-bomb fa-spin fa-spin-reverse" style="color: #e53010;"></i>`;
@@ -116,7 +100,6 @@ function createHtmlElement(htmlTag, classes, text){
     return element;
 
 }
-
 
 // get :root element
 
@@ -159,17 +142,6 @@ function makeBombs(bombsNumber){
 
 function randomNumber (min,max) {
   return Math.floor (Math.random ()* (max-min+1)+min);
-}
-
-// function aimed at ending the game
-
-function gameOver() {
-    if ( score == attemptsAllowed ) {
-        document.getElementById("gameresponse").innerHTML = `Hai vinto col punteggio massimo di ${score} punti 🤩😍🤓`;
-
-    } else {
-        document.getElementById("gameresponse").innerHTML = `Hai perso 💣😩💣 La tua partita è terminata con il punteggio: ${score}`;
-    }
 }
 
 // dark mode controller variable
